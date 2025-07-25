@@ -1,21 +1,10 @@
 {% extends "base.html" %}
-{% load static %}
 {% block title %}
   {{ post.location }}. {{post.date}}
 {% endblock %}
 {% block content %}
   <article>
-    <ul>
-      <li>
-        {{ post.location }}            
-      </li>
-      <li>
-        {{post.date}} 
-      </li>
-      <li>
-        Категория: <a href="{% url 'blog:category_posts' post.category %}">{{ post.category }}</a>
-      </li>
-    </ul>         
+    {% include "blog\includes\posts_for_blog.html" %}         
     <p>
       {{ post.text|linebreaksbr }}
     </p>          

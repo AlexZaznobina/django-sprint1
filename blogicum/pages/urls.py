@@ -1,4 +1,3 @@
-# 'pages/about/'	pages	about	about.html
 from django.urls import path
 from . import views
 

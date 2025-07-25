@@ -1,5 +1,4 @@
 {% extends "base.html" %}
-{% load static %}
 {% block title %}
   Лента записей
 {% endblock %}
@@ -8,19 +7,9 @@
       <hr>
       {% for post in posts %}
         <article>
-          <ul>
-            <li>
-              Место: {{ post.location }}             
-            </li>
-            <li>
-              Дата: {{ post.date }}
-            </li>
-            <li>
-              Категория: <a href="{% url 'blog:category_posts' post.category %}">{{ post.category }}</a>
-            </li>
-          </ul>
+          {% include "blog\includes\posts_for_blog.html" %}
           <p>
-            {{ post.text|truncatewords:10 }}
+            {{ post.text|linebreaksbr|truncatewords:10 }}
           </p>
           <a href="{% url 'blog:post_detail' post.id %}">Читать полный текст</a>
         </article>
