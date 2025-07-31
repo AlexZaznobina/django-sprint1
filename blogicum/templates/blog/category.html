@@ -7,7 +7,7 @@
       <hr>
       {% for post in filtered_posts %}
         <article>
-          {% include "blog\includes\posts_for_blog.html" %}
+          {% include "blog/includes/posts_for_blog.html" %}
           <p>
             {{ post.text|linebreaksbr|truncatewords:10 }}
           </p>
